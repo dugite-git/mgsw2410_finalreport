@@ -18,6 +18,8 @@ discordのボットを使わなくとも直接```mosquitto_pub -l -t test/client
 > [!NOTE]
 > ```-h```以降は.envで指定したブローカーのアドレスを入力してください
 
+-1で閉じたシリアル通信はarduinoのボタンを長押しで再開できます。
+
 ### 環境
 OS: Ubuntu 22.04.4 LTS (WSL2)
 
