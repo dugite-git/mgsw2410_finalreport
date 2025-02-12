@@ -23,6 +23,8 @@ float hum_temp_val[2] = {0.0f};
 float Temperature = 0.0f; // 温度
 float Humidity = 0.0f;    // 湿度
 
+string device_id = "one-001"; // デバイスID
+
 void readSensor();
 void handleSerial();
 void buttonCheck();
@@ -57,7 +59,7 @@ void readSensor()
     Humidity = 100.0f;
     Temperature = 100.0f;
   }
-  Serial.print("one-001\t"); // ← この部分は各自で変更せよ
+  Serial.print(device_id + "\t"); // ← この部分は各自で変更せよ
 
   Serial.print(millis());
   Serial.print("\t");
@@ -81,7 +83,7 @@ void handleSerial()
     {
       if (v1 == -1)
       {
-        Serial.print("one-001\t");
+        Serial.print(device_id + "\t");
 
         Serial.print(millis());
         Serial.print("\t");
@@ -95,7 +97,7 @@ void handleSerial()
       }
       else if (v1 == 0)
       {
-        Serial.print("one-001\t");
+        Serial.print(device_id + "\t");
 
         Serial.print(millis());
         Serial.print("\t");
@@ -108,7 +110,7 @@ void handleSerial()
       }
       else if (v1 == 1)
       {
-        Serial.print("one-001\t");
+        Serial.print(device_id + "\t");
 
         Serial.print(millis());
         Serial.print("\t");
@@ -131,8 +133,8 @@ void buttonCheck()
   {
     Serial.begin(57600);
 
-    Serial.print("one-001\t");
-    
+    Serial.print(device_id + "\t");
+
     Serial.print(millis());
     Serial.print("\t");
     Serial.print(-1);
