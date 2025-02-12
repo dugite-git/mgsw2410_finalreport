@@ -50,3 +50,4 @@ npm start
 - /shellにあるファイルの/dev/ttyUSB0の部分は環境によって異なる可能性があるので、適宜```ls -l /dev/ttyACM* /dev/ttyUSB*```などのコマンドを利用して確認し、変更してください。
 - wsl2でusbを認識させた際、```sudo chmod 666 /dev/ttyUSB0```などで権限を渡さないと、シェルスクリプトが動作しないので注意してください。
 - /arduino/src/main.cの26行目のdevice_idを変更するとデバイスIDが変わります。
+- ブローカーをlocalhost以外にした場合シェルスクリプトのブローカーの部分を指定したブローカーに変更してください。
