@@ -16,7 +16,9 @@ discordのボットを使わなくとも直接```mosquitto_pub -l -t test/client
 |1|温度を返す|
 
 > [!NOTE]
-> ```-h```以降は.envで指定したブローカーのアドレスを入力してください
+> ```mosquitto_pub -l -t test/client -h localhost```の```-h```以降は.envで指定したブローカーのアドレスを入力してください。
+
+```-1```で閉じたシリアル通信はarduinoのボタンを長押しで再開できます。
 
 ### 環境
 OS: Ubuntu 22.04.4 LTS (WSL2)
@@ -29,7 +31,7 @@ OS: Ubuntu 22.04.4 LTS (WSL2)
 - arduinoに/arduinoディレクトリのソースコードをコンパイルしてアップロードしている。
 - node.jsが入っている
 
-### 使い方
+### 起動方法
 1. /shellディレクトリで以下のコマンドをする。
 ```
 ./report_server_pub.sh
@@ -48,3 +50,4 @@ npm start
 - /shellにあるファイルの/dev/ttyUSB0の部分は環境によって異なる可能性があるので、適宜```ls -l /dev/ttyACM* /dev/ttyUSB*```などのコマンドを利用して確認し、変更してください。
 - wsl2でusbを認識させた際、```sudo chmod 666 /dev/ttyUSB0```などで権限を渡さないと、シェルスクリプトが動作しないので注意してください。
 - /arduino/src/main.cの26行目のdevice_idを変更するとデバイスIDが変わります。
+- ブローカーをlocalhost以外にした場合シェルスクリプトのブローカーの部分を指定したブローカーに変更してください。
