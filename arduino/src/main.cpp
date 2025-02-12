@@ -23,7 +23,7 @@ float hum_temp_val[2] = {0.0f};
 float Temperature = 0.0f; // 温度
 float Humidity = 0.0f;    // 湿度
 
-string device_id = "one-001"; // デバイスID
+String device_id = "one-001"; // デバイスID
 
 void readSensor();
 void handleSerial();
@@ -76,7 +76,7 @@ void handleSerial()
   int n;
   if (Serial.available() > 0)
   {
-    int v1, v2;
+    int v1;
     String str = Serial.readStringUntil('\n');
     n = sscanf(str.c_str(), "%d %d %d", &v1);
     if (n >= 1)
