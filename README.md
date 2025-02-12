@@ -7,6 +7,17 @@ discordのボットのコマンドを通じ、arduinoのある地点の湿度と
 |/gethumidity|湿度を返す|
 |/gettemperature|温度を返す|
 
+discordのボットを使わなくとも直接```mosquitto_pub -l -t test/client -h localhost```を使って操作することも出来る。
+
+|コマンド一覧||
+|-|-|
+|-1|arduinoのシリアル通信を閉じる|
+|0|湿度を返す|
+|1|温度を返す|
+
+> [!NOTE]
+> ```-h```以降は.envで指定したブローカーのアドレスを入力してください
+
 ### 環境
 OS: Ubuntu 22.04.4 LTS (WSL2)
 
@@ -36,3 +47,4 @@ npm start
 - /arduinoはVScodeのplatformIOのプロジェクトファイルになっているので、platformIOのプロジェクトファイルとして認識させれば簡単にコードの適用が出来るはずです。
 - /shellにあるファイルの/dev/ttyUSB0の部分は環境によって異なる可能性があるので、適宜```ls -l /dev/ttyACM* /dev/ttyUSB*```などのコマンドを利用して確認し、変更してください。
 - wsl2でusbを認識させた際、```sudo chmod 666 /dev/ttyUSB0```などで権限を渡さないと、シェルスクリプトが動作しないので注意してください。
+- /arduino/src/main.cの26行目のdevice_idを変更するとデバイスIDが変わります。
