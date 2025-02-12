@@ -1,5 +1,15 @@
+### Discordを使った湿度・温度遠隔確認プログラム
+discordのボットのコマンドを通じ、arduinoのある地点の湿度と温度を確認できる。
+
+|コマンド一覧||
+|-|-|
+|/getalldata|湿度と温度を返す|
+|/gethumidity|湿度を返す|
+|/gettemperature|温度を返す|
+
 ### 環境
 OS: Ubuntu 22.04.4 LTS (WSL2)
+
 機材: Grove Beginner Kit for Arduino (DHT20搭載)
 
 ### 前提条件
