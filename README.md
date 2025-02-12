@@ -31,7 +31,7 @@ OS: Ubuntu 22.04.4 LTS (WSL2)
 - arduinoに/arduinoディレクトリのソースコードをコンパイルしてアップロードしている。
 - node.jsが入っている
 
-### 使い方
+### 起動方法
 1. /shellディレクトリで以下のコマンドをする。
 ```
 ./report_server_pub.sh
