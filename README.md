@@ -30,6 +30,7 @@ OS: Ubuntu 22.04.4 LTS (WSL2)
 - /discordディレクトリにsample.envを参考に.envファイルを作成し、環境変数を入力している。
 - arduinoに/arduinoディレクトリのソースコードをコンパイルしてアップロードしている。
 - node.jsが入っている
+- mosquitto, mosquitto-clients, nkfが入っている
 
 ### 起動方法
 1. /shellディレクトリで以下のコマンドをする。
