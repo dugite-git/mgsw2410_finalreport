@@ -73,54 +73,49 @@ void readSensor()
 
 void handleSerial()
 {
-  int n;
   if (Serial.available() > 0)
   {
+    char c;
     int v1;
-    String str = Serial.readStringUntil('\n');
-    n = sscanf(str.c_str(), "%d %d %d", &v1);
-    if (n >= 1)
+    c = Serial.read();
+    v1 = c - '0';
+    if (v1 == 2)
     {
-      if (v1 == -1)
-      {
-        Serial.print(device_id + "\t");
+      Serial.print(device_id + "\t");
 
-        Serial.print(millis());
-        Serial.print("\t");
-        Serial.print(-1);
-        Serial.print("\t");
-        Serial.print("Closed\n");
-        Serial.flush();
-        delay(100);
-        Serial.end();
-        delay(100);
-      }
-      else if (v1 == 0)
-      {
-        Serial.print(device_id + "\t");
+      Serial.print(millis());
+      Serial.print("\t");
+      Serial.print(-1);
+      Serial.print("\t");
+      Serial.print("Closed\n");
+      Serial.flush();
+      Serial.end();
+    }
+    else if (v1 == 0)
+    {
+      Serial.print(device_id + "\t");
 
-        Serial.print(millis());
-        Serial.print("\t");
-        Serial.print(1);
-        Serial.print("\t");
-        Serial.print(Humidity);
-        Serial.print("\t");
-        Serial.print(100);
-        Serial.print("\n");
-      }
-      else if (v1 == 1)
-      {
-        Serial.print(device_id + "\t");
+      Serial.print(millis());
+      Serial.print("\t");
+      Serial.print(1);
+      Serial.print("\t");
+      Serial.print(Humidity);
+      Serial.print("\t");
+      Serial.print(100);
+      Serial.print("\n");
+    }
+    else if (v1 == 1)
+    {
+      Serial.print(device_id + "\t");
 
-        Serial.print(millis());
-        Serial.print("\t");
-        Serial.print(1);
-        Serial.print("\t");
-        Serial.print(100);
-        Serial.print("\t");
-        Serial.print(Temperature);
-        Serial.print("\n");
-      }
+      Serial.print(millis());
+      Serial.print("\t");
+      Serial.print(1);
+      Serial.print("\t");
+      Serial.print(100);
+      Serial.print("\t");
+      Serial.print(Temperature);
+      Serial.print("\n");
     }
   }
 }
@@ -141,6 +136,5 @@ void buttonCheck()
     Serial.print("\t");
     Serial.print("Opened\n");
     Serial.flush();
-    delay(100);
   }
 }
