@@ -11,14 +11,14 @@ discordのボットを使わなくとも直接```mosquitto_pub -l -t test/client
 
 |コマンド一覧||
 |-|-|
-|-1|arduinoのシリアル通信を閉じる|
 |0|湿度を返す|
 |1|温度を返す|
+|2|arduinoのシリアル通信を閉じる|
 
 > [!NOTE]
 > ```mosquitto_pub -l -t test/client -h localhost```の```-h```以降は.envで指定したブローカーのアドレスを入力してください。
 
-```-1```で閉じたシリアル通信はarduinoのボタンを長押しで再開できます。
+```2```で閉じたシリアル通信はarduinoのボタンを長押しで再開できます。
 
 ### 環境
 OS: Ubuntu 22.04.4 LTS (WSL2)
@@ -35,13 +35,9 @@ OS: Ubuntu 22.04.4 LTS (WSL2)
 ### 起動方法
 1. /shellディレクトリで以下のコマンドをする。
 ```
-./report_server_pub.sh
+./report_server.sh
 ```
-2. 新しくターミナルを立ち上げ、1と同様に以下のコマンドをする。
-```
-./report_server_sub.sh
-```
-3. 新しくターミナルを立ち上げ、/discordディレクトリで以下のコマンドをする。
+2. 新しくターミナルを立ち上げ、/discordディレクトリで以下のコマンドをする。
 ```
 npm start
 ```
